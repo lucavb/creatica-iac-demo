@@ -1,0 +1,6 @@
+@creatica_iac_demo_HostAddress = http://localhost:5166
+
+GET {{creatica_iac_demo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/creatica-iac-demo.props" />
+</Project>

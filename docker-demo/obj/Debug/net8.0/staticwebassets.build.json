@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "vMQ1UH45dhTEinwY6bwnFd2q14Anpk3GyjQQTjH66bU=",
+  "Source": "creatica-iac-demo",
+  "BasePath": "_content/creatica-iac-demo",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
