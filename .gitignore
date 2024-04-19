@@ -1,0 +1,18 @@
+# Node
+**/.DS_Store
+**/.Rhistory
+**/.env
+**/node_modules
+
+# IDEs
+.vscode
+**/.idea
+**/coverage
+*.sublime-project
+*.sublime-workspace
+*.iml
+
+# Terraform
+*.tfstate.backup
+.terraform
+terraform-ls.tf
