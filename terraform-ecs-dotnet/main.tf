@@ -1,6 +1,6 @@
 provider "aws" {
-  region              = "eu-central-1"
-  allowed_account_ids = [var.aws_account_id]
+  region              = "eu-west-1"
+  allowed_account_ids = [941982015192]
 }
 
 terraform {
@@ -15,9 +15,9 @@ terraform {
 
 
   backend "s3" {
-    bucket = "beckerl-terraform-state"
-    key    = "terraform/my-cool-state"
-    region = "eu-central-1"
+    bucket = "creatica-workshop-tf-state"
+    key    = "ecs-demo/creatica-workshop-state"
+    region = "eu-west-1"
   }
 
 }
