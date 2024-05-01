@@ -1,0 +1,38 @@
+name: 'Terraform'
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  terraform:
+    name: 'Terraform'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - uses: opentofu/setup-opentofu@v1
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: eu-west-1
+          role-to-assume: arn:aws:iam::941982015192:role/GitHubActionsRole
+
+      - name: Print caller-identity
+        run: aws sts get-caller-identity
+
+      - name: Change to ECS Terraform Directory
+        run: cd terraform-ecs-dotnet
+
+      - name: Terraform Init
+        run: tofu -chdir=terraform-ecs-dotnet init
+
+      - name: Terraform Plan
+        run: tofu -chdir=terraform-ecs-dotnet plan
