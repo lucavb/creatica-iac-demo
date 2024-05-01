@@ -13,6 +13,7 @@
 *.iml
 
 # Terraform
+*.tfstate
 *.tfstate.backup
-.terraform
-terraform-ls.tf
+.terraform/
+*.tfvars
