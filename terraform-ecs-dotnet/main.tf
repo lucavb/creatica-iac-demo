@@ -1,6 +1,6 @@
 provider "aws" {
   region              = "eu-west-1"
-  allowed_account_ids = [941982015192]
+  allowed_account_ids = [123456789] # replace with your account id
 }
 
 terraform {
@@ -15,8 +15,8 @@ terraform {
 
 
   backend "s3" {
-    bucket = "creatica-workshop-tf-state"
-    key    = "ecs-demo/creatica-workshop-state"
+    bucket = "creatica-workshop-tf-state" # replace with your bucket name
+    key    = "ecs-demo/creatica-workshop-state" # can be any key you want
     region = "eu-west-1"
   }
 
