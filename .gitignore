@@ -17,3 +17,6 @@
 *.tfstate.backup
 .terraform/
 *.tfvars
+
+# Build
+build/

@@ -1,8 +1,14 @@
+data "archive_file" "weather" {
+  type        = "zip"
+  source_file = "../lambda-demo/main.js"
+  output_path = "../build/weather.zip"
+}
+
 resource "aws_lambda_function" "weather" {
   function_name = "${var.prefix}-weather"
 
-  filename = "../lambda-demo/weather.zip"
-  source_code_hash = filebase64sha256("../lambda-demo/weather.zip")
+  filename = data.archive_file.weather.output_path
+  source_code_hash = data.archive_file.weather.output_base64sha256
 
   handler = "main.handler"
   runtime = "nodejs20.x"
